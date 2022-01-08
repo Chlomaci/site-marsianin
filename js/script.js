@@ -24,13 +24,31 @@ const movieDB = {
     ]
 };
 
-/*let div = document.querySelectorAll('div');
+let promoAdv = document.querySelectorAll('.promo__adv img');
+promoAdv.forEach(item => item.remove());
 
-console.log(div);
+let promoGenre = document.querySelector('.promo__genre');
+promoGenre.textContent = "ДРАМА";
 
-div[19].remove();
+let promoBG = document.querySelector('.promo__bg');
+promoBG.style.backgroundImage = 'url("img/bg.jpg")';
 
-console.log(div);*/
+let interactive = document.querySelector('.promo__interactive-list');
+let oldFilms = interactive.querySelectorAll('li');
+oldFilms.forEach(item => item.remove());
 
-document.querySelectorAll('div')[19].remove();
+let arrFilms = movieDB['movies'];
+arrFilms.sort();
+console.log(arrFilms);
+
+for (let i = 0; i < arrFilms.length; i++){
+    interactive.insertAdjacentHTML("beforeend", `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`);
+}
+
+
+
+
+
+
+
 
