@@ -24,5 +24,13 @@ const movieDB = {
     ]
 };
 
-document.querySelectorAll('.promoAdv').remove();
+/*let div = document.querySelectorAll('div');
+
+console.log(div);
+
+div[19].remove();
+
+console.log(div);*/
+
+document.querySelectorAll('div')[19].remove();
 
