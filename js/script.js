@@ -58,11 +58,10 @@ arrFilms.sort(); // отсортировали фильмы по алфавит�
 let submitFilm = document.querySelector('.add button');
 submitFilm.addEventListener('click', function(e) {
     e.preventDefault();
-}); // страница перестала обновляться
+});  // страница перестала обновляться
 
     for (let i = 0; i < arrFilms.length; i++){
-    //другой рабочий вариант: interactive.insertAdjacentHTML("beforeend", `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`);
-    interactive.innerHTML += `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`;
+    interactive.innerHTML += `<li class="promo__interactive-item">${i+1 + " " + arrFilms[i]}<div class="delete"></div> </li>`;
 } // показали фильмы на странице через js массив
 
 
@@ -77,13 +76,10 @@ submitFilm.addEventListener('click', function(){
         console.log(arrFilms);
         
         
-        let newList = document.createElement('ul');
-        newList.classList.add('.promo__interactive-list');
+        interactive.innerHTML = " ";
         for (let i = 0; i < arrFilms.length; i++){
-            newList.insertAdjacentHTML("beforeend", `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`);
-            //interactive.innerHTML = `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`;
+            interactive.insertAdjacentHTML("beforeend", `<li class="promo__interactive-item">${i+1 + " " + arrFilms[i]}<div class="delete"></div> </li>`);
         } 
-        interactive.replaceWith(newList);
     } else if (input.value != '' && input.value != ' ' && input.value.length > 21) {
         let arr = input.value.split('');
         let newArr = arr.slice(0, 22).join('');
@@ -93,16 +89,13 @@ submitFilm.addEventListener('click', function(){
         arrFilms.sort(); 
         console.log(arrFilms);
         
-        let newList = document.createElement('ul');
-        newList.classList.add('.promo__interactive-list');
+        interactive.innerHTML = " ";
         for (let i = 0; i < arrFilms.length; i++){
-            newList.insertAdjacentHTML("beforeend", `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`);
-            //interactive.innerHTML = `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`;
+            interactive.insertAdjacentHTML("beforeend", `<li class="promo__interactive-item">${[i+1] + " " + arrFilms[i]}<div class="delete"></div> </li>`);
         } 
         interactive.replaceWith(newList);
     }
 });
-
 
 
 
